@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: drools-engine # name of our deployment to be used with minikube service
+  namespace: drools-demo
+spec:
+  selector:
+    matchLabels:
+      app: drools-engine
+  template:
+    metadata:
+      labels:
+        app: drools-engine
+    spec:
+      containers:
+        - name: drools-engine
+          image: prototype_image # name of the image containing our .jar made with docker build
+          imagePullPolicy: Never # required on a local system so that k8s won't check for this image on DockerHub (it only exists locally, so this would fail)
+          ports:
+            - containerPort: 8080 # the port used by the .jar inside the container
+      #     volumeMounts:
+      #       - name: storage
+      #         mountPath: /metrics
+      # volumes:
+      #   - name: storage
+      #     persistentVolumeClaim:
+      #       claimName: demo-pvc
+
