@@ -2,7 +2,9 @@
 # Instrukcje uruchomienia
 
 **startup.bat** - uruchamia system
+
 **build-image-win.bat** - uruchamiony po zmianu pliku .jar (kiedy minikube już działa), aktualizuje docker image i restartuje deployment
+
 **shutdown.bat** - wyłącza system
 
 
