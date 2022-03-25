@@ -55,6 +55,7 @@ public class DemoTask extends TimerTask {
                 PrintWriter pw = new PrintWriter(sw);
                 e.printStackTrace(pw);
                 logBuilder.append(sw).append("\n");
+                e.printStackTrace();
             }
 
         }
