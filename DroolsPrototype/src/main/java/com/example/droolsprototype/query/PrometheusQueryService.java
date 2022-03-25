@@ -1,6 +1,7 @@
 package com.example.droolsprototype.query;
 
 import com.example.droolsprototype.model.QueryResult;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -15,10 +16,12 @@ public class PrometheusQueryService {
 
     private final RestTemplate restTemplate;
 
-    private static final String PROMETHEUS_URL ="http://prometheus.monitoring.svc.cluster.local:9090";
+
+    private static String PROMETHEUS_URL;
 
 
-    public PrometheusQueryService(RestTemplateBuilder restTemplateBuilder) {
+    public PrometheusQueryService(RestTemplateBuilder restTemplateBuilder, @Value("${prometheus:}") String prometheusUrl) {
+        PrometheusQueryService.PROMETHEUS_URL = prometheusUrl;
         this.restTemplate = restTemplateBuilder.build();
     }
 

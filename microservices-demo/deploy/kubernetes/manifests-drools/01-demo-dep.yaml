@@ -16,6 +16,7 @@ spec:
       containers:
         - name: drools-engine
           image: prototype_image # name of the image containing our .jar made with docker build
+          args: ["--prometheus=http://prometheus.monitoring.svc.cluster.local:9090"] # commandline arguments used when running the image 
           imagePullPolicy: Never # required on a local system so that k8s won't check for this image on DockerHub (it only exists locally, so this would fail)
           ports:
             - containerPort: 8080 # the port used by the .jar inside the container
