@@ -1,4 +1,4 @@
-package com.example.droolsprototype.model.promql;
+package org.foobar.library.model.promql;
 
 import java.io.Serializable;
 import java.util.Arrays;

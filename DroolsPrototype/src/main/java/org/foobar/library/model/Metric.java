@@ -1,6 +1,6 @@
-package com.example.droolsprototype.model;
+package org.foobar.library.model;
 
-import com.example.droolsprototype.model.promql.QueryResult;
+import org.foobar.library.model.promql.QueryResult;
 
 /**
  * Class which transforms the JSON query result converted to a Java object

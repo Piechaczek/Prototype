@@ -1,6 +1,6 @@
 package com.example.droolsprototype.query;
 
-import com.example.droolsprototype.model.promql.QueryResult;
+import org.foobar.library.model.promql.QueryResult;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;

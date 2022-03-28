@@ -1,8 +1,8 @@
 package com.example.droolsprototype.demo;
 
-import com.example.droolsprototype.model.Metric;
+import org.foobar.library.model.Metric;
 import com.example.droolsprototype.model.QueryInfo;
-import com.example.droolsprototype.model.promql.QueryResult;
+import org.foobar.library.model.promql.QueryResult;
 import com.example.droolsprototype.execution.ExecutionService;
 import com.example.droolsprototype.query.PrometheusQueryService;
 import org.kie.api.runtime.KieSession;
