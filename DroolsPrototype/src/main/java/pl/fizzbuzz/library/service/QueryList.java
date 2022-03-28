@@ -1,16 +1,16 @@
-package com.example.droolsprototype.model;
+package pl.fizzbuzz.library.service;
 
 import java.util.List;
 
-public class QueryInfo {
+public class QueryList {
 
     private List<String> queries;
 
-    public QueryInfo() {
+    public QueryList() {
         // required by jackson
     }
 
-    public QueryInfo(String... queries){
+    public QueryList(String... queries){
         this.queries = List.of(queries);
     }
 

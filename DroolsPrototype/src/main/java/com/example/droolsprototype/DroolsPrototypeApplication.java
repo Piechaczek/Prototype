@@ -10,7 +10,7 @@ import java.util.Timer;
 /**
  * Application entry point
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"pl.fizzbuzz.library", "com.example.droolsprototype"})
 public class DroolsPrototypeApplication {
 
     public final static double CPU_THRESHOLD = -999;
