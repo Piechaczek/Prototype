@@ -1,4 +1,4 @@
-package com.example.droolsprototype.model;
+package com.example.droolsprototype.model.promql;
 
 import java.io.Serializable;
 import java.util.Arrays;
@@ -9,13 +9,13 @@ import java.util.Arrays;
 public class Data implements Serializable {
 
     private String resultType;
-    private String[] result;
+    private Result[] result;
 
     public Data() {
         //required by Jackson
     }
 
-    public Data(String resultType, String[] result) {
+    public Data(String resultType, Result[] result) {
         this.resultType = resultType;
         this.result = result;
     }
@@ -28,11 +28,11 @@ public class Data implements Serializable {
         this.resultType = resultType;
     }
 
-    public String[] getResult() {
+    public Result[] getResult() {
         return result;
     }
 
-    public void setResult(String[] result) {
+    public void setResult(Result[] result) {
         this.result = result;
     }
 

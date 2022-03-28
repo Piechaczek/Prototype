@@ -2,7 +2,7 @@ package com.example.droolsprototype.demo;
 
 import com.example.droolsprototype.model.Metric;
 import com.example.droolsprototype.model.QueryInfo;
-import com.example.droolsprototype.model.QueryResult;
+import com.example.droolsprototype.model.promql.QueryResult;
 import com.example.droolsprototype.execution.ExecutionService;
 import com.example.droolsprototype.query.PrometheusQueryService;
 import org.kie.api.runtime.KieSession;
@@ -30,9 +30,7 @@ public class DemoTask extends TimerTask {
         this.kieSession = kieSession;
         this.executionService = executionService;
 
-        //query has to look like this: request_duration_seconds_sum{service=\"front-end\"}
-        //this means we need to escape both the \ and the " giving us: \\\"
-        this.toQuery = new QueryInfo("request_duration_seconds_sum{service=\\\"front-end\\\"}");
+        this.toQuery = new QueryInfo("request_duration_seconds_sum");
 
         this.logBuilder = new StringBuilder();
     }
@@ -45,8 +43,7 @@ public class DemoTask extends TimerTask {
             try {
                 QueryResult queryResult = queryService.queryMetric(query);
                 logBuilder.append(query).append("\n"); //log query
-                //TODO
-                Metric metric = new Metric("request_duration_seconds_sum", "front-end", queryResult);
+                Metric metric = new Metric(queryResult);
 
                 //debug
                 System.out.println(metric);

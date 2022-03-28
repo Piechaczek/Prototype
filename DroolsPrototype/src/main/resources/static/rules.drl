@@ -9,26 +9,11 @@ rule "trigger_pod_CPU_request"
     dialect "mvel"
     when
         metric : Metric(
-            service == "front-end" &&
             name == "request_duration_seconds_sum" &&
-            eval(Double.parseDouble(metric.getQueryResult().getData().getResult()[0]) > DroolsPrototypeApplication.CPU_THRESHOLD)
+            valueDouble > DroolsPrototypeApplication.CPU_THRESHOLD
         )
         executor : ExecutionService()
     then
         System.out.println("CPU usage too high!");
         executor.reduceCPU();
-end
-
-rule "time_test"
-    dialect "mvel"
-    when
-        metric : Metric(
-            service == "rabbitmq-8d7575749-6dx6x" &&
-            name == "time" &&
-            eval((int) Double.parseDouble(metric.getQueryResult().getData().getResult()[0]) % 60 == 0)
-        )
-        executor : ExecutionService()
-    then
-        System.out.println("!");
-        executor.time();
 end

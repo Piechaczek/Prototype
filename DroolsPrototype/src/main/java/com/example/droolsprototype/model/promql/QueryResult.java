@@ -1,4 +1,6 @@
-package com.example.droolsprototype.model;
+package com.example.droolsprototype.model.promql;
+
+import com.example.droolsprototype.model.promql.Data;
 
 import java.io.Serializable;
 
