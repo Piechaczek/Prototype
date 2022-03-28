@@ -8,8 +8,7 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  * Service for making GET requests to the Prometheus service
- * note: in this example the Prometheus url is hardcoded, change it to the url returned by:
- *     minikube service prometheus --namespace="monitoring" --url
+ * The prometheus URL is provide as a commandline argument of the form --prometheus="..."
  */
 @Service
 public class PrometheusQueryService {

@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Provides an endpoint for posting queries to be executed as part of the demo
+ */
 @RestController
 public class QueryController {
 

@@ -12,6 +12,9 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.TimerTask;
 
+/**
+ * Demo performing queries and firing mock rule engine rules
+ */
 @Component
 public class DemoTask extends TimerTask {
 
@@ -20,7 +23,7 @@ public class DemoTask extends TimerTask {
     private final ExecutionService executionService;
 
     private QueryInfo toQuery;
-    private StringBuilder logBuilder;
+    private final StringBuilder logBuilder;
 
     public DemoTask(PrometheusQueryService queryService, KieSession kieSession, ExecutionService executionService) {
         this.queryService = queryService;
